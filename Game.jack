@@ -42,6 +42,7 @@ class Game
         {
             do Screen.clearScreen();
             do Output.printString("you win");
+            do player.dispose();
             return 1;
         }
         do Sys.wait(key_lag);
