@@ -32,6 +32,9 @@ add
 pop local 1
 goto WHILE_EXP0
 label WHILE_END0
+push local 0
+call Block.dispose 1
+pop temp 0
 push constant 0
 return
 function Blocks.clear_scrn 2
@@ -58,6 +61,9 @@ add
 pop local 1
 goto WHILE_EXP0
 label WHILE_END0
+push local 0
+call Block.dispose 1
+pop temp 0
 push constant 0
 return
 function Blocks.find_block 2
@@ -96,6 +102,9 @@ add
 pop local 0
 goto WHILE_EXP0
 label WHILE_END0
+push local 1
+call Block.dispose 1
+pop temp 0
 push constant 1
 neg
 return

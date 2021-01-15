@@ -26,6 +26,11 @@ push constant 0
 add
 push constant 1
 neg
+push local 0
+push constant 0
+add
+call Memory.peek 1
+or
 call Memory.poke 2
 pop temp 0
 push local 0
@@ -33,6 +38,11 @@ push constant 32
 add
 push constant 32767
 neg
+push local 0
+push constant 32
+add
+call Memory.peek 1
+or
 call Memory.poke 2
 pop temp 0
 push local 0
@@ -132,6 +142,14 @@ add
 push constant 1
 neg
 call Memory.poke 2
+pop temp 0
+push constant 0
+return
+function Wall.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
 pop temp 0
 push constant 0
 return

@@ -21,4 +21,9 @@ class Target
         do Screen.drawRectangle(px*16+4,py*16+4,px*16+8,py*16+8);
         return;
     }
+    method void dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
 }

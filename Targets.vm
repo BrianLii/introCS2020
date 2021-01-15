@@ -68,5 +68,8 @@ add
 pop local 0
 goto WHILE_EXP0
 label WHILE_END0
+push local 2
+call Target.dispose 1
+pop temp 0
 push local 1
 return

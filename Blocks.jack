@@ -24,6 +24,7 @@ class Blocks
             do tmpB.draw();
             let i=i+1;
         }
+        do tmpB.dispose();
         return;
     }
     function void clear_scrn()
@@ -37,6 +38,7 @@ class Blocks
             do tmpB.clear_scrn();
             let i=i+1;
         }
+        do tmpB.dispose();
         return;
     }
     function int find_block(int x,int y)
@@ -53,6 +55,7 @@ class Blocks
             }
             let i=i+1;
         }
+        do tmpB.dispose();
         return -1;
     }
 }

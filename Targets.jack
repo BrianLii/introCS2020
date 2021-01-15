@@ -36,6 +36,7 @@ class Targets
             }
             let i=i+1;
         }
+        do tmpTarget.dispose();
         return ans;
     }
 }

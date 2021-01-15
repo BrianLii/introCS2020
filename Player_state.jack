@@ -71,4 +71,9 @@ class Player_state
     {
         return player_y;
     }
+    method void dispose()
+    {
+        do Memory.deAlloc(this);
+        return;
+    }
 }
