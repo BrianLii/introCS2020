@@ -79,9 +79,15 @@ class Main
 		do Output.println();
 		do Output.println();
 		do Output.printString("@LouisTsai-Csie: ");
+
+		do Output.moveCursor(22,0);
+		do Output.printString("                    Press any key to quit.");
+		do Sys.wait(500);
 		let i=0;
-		while(true)
+		let inp=0;
+		while(inp=0)
 		{
+			let inp=Keyboard.keyPressed();
 			if(i>55){let i=0;}
 			do Output.moveCursor(3,i);
 			do Output.printString(String_const._you_win());
@@ -90,6 +96,7 @@ class Main
 			do Sys.wait(100);
 			let i=i+1;
 		}
+		
 		return;
 	}
 }
