@@ -5,12 +5,52 @@ class Main
 	function void main() 
 	{
 		var boolean win_flag;
+		var int inp;
+		do String_const.init();
+		do Output.moveCursor(5,0);
+		do Output.printString("   _____  ____  _  ______  ____          _   _ ");
+		do Output.println();
+		do Output.printString("  / ____|/ __ \\| |/ / __ \\|  _ \\   /\\   | \\ | |");
+		do Output.println();
+		do Output.printString(" | (___ | |  | | ' / |  | | |_) | /  \\  |  \\| |");
+		do Output.println();
+		do Output.printString("  \\___ \\| |  | |  <| |  | |  _ < / /\\ \\ | . ` |");
+		do Output.println();
+		do Output.printString("  ____) | |__| | . \\ |__| | |_) / ____ \\| |\\  |");
+		do Output.println();
+		do Output.printString(" |_____/ \\____/|_|\\_\\____/|____/_/    \\_\\_| \\_|");
+		do Output.println();
+		do Output.printString("              _                 _                  ");
+		do Output.println();
+		do Output.printString("     /\\      | |               | |                 ");
+		do Output.println();
+		do Output.printString("    /  \\   __| |_   _____ _ __ | |_ _   _ _ __ ___ ");
+		do Output.println();
+		do Output.printString("   / /\\ \\ / _` \\ \\ / / _ \\ '_ \\| __| | | | '__/ _ \\");
+		do Output.println();
+		do Output.printString("  / ____ \\ (_| |\\ V /  __/ | | | |_| |_| | | |  __/");
+		do Output.println();
+		do Output.printString(" /_/    \\_\\__,_| \\_/ \\___|_| |_|\\__|\\__,_|_|  \\___|");
+		do Output.println();
+		do Output.moveCursor(21,0);
+		do Output.printString("                 Press any key to continue.");
+		while(inp=0)
+        {
+            let inp=Keyboard.keyPressed();
+			do Sys.wait(30);
+		}
+		do Screen.clearScreen();
 		let progress=1;
 		do Tools.init();
 		while(progress<4)
 		{
+			do Output.moveCursor(15,28*2);
+			do Output.printString(String_const._stage());
+			do Output.printInt(progress);
 			do Game.init(progress);
+			do Game.draw();
 			let win_flag=Game.play();
+			do Screen.clearScreen();
 			do Player_log.delete_log();
 			do Stage.delete_stage();
 			do Map.delete_wall();
@@ -18,7 +58,7 @@ class Main
 		}
 		do Screen.clearScreen();
 		do Output.moveCursor(10,20);
-		do Output.printString("you win");
+		do Output.printString(String_const._you_win());
 		do Sys.halt();
 		return;
 	}

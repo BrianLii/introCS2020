@@ -1,0 +1,44 @@
+class String_const
+{
+    static String __torch,__flash,__left,__space,__step,__you_win;
+    static String __stage;
+    function void init()
+    {
+        let __torch="Torch:";
+        let __flash="Flash:";
+        let __left="Left:";
+        let __space=" ";
+        let __step="Step:";
+        let __you_win="!YOU WIN!";
+        let __stage="Stage:";
+        return;
+    }
+    function String _torch()
+    {
+        return __torch;
+    }
+    function String _flash() 
+    {
+        return __flash;
+    }
+    function String _left()
+    {
+        return __left;
+    } 
+    function String _space()
+    {
+        return __space;
+    }
+    function String _step()
+    {
+        return __step;
+    }
+    function String _you_win()
+    {
+        return __you_win;
+    }
+    function String _stage()
+    {
+        return __stage;
+    }
+}

@@ -18,16 +18,16 @@ class Game
         let key_lag=1;
         let steps=0;
         do Output.moveCursor(5,28*2);
-        do Output.printString("Torch:");
+        do Output.printString(String_const._torch());
         do Output.moveCursor(6,28*2);
-        do Output.printString("Left :");
+        do Output.printString(String_const._left());
 
         do Output.moveCursor(8,28*2);
-        do Output.printString("Flash:");
+        do Output.printString(String_const._flash());
         do Output.moveCursor(9,28*2);
-        do Output.printString("Left :");
+        do Output.printString(String_const._left());
         do Output.moveCursor(11,28*2);
-        do Output.printString("step:");
+        do Output.printString(String_const._step());
         return;
     }
     function Player _player()
@@ -77,11 +77,14 @@ class Game
             }
             do Sys.wait(key_lag);
         }
+        do player.draw();
         return 0;
     }
     function boolean play()
     {
         var char inp;
+        do Player_log.add();
+        do Tools.update(0);
         while(true)
         {
             let inp=Keyboard.keyPressed();
@@ -114,19 +117,25 @@ class Game
                     return 1;
                 }
             }
-            if(inp=81)//q=torch
+            if(inp=84)//t=torch
             {
                 do Tools.update(1);
+                do Shade.draw();
                 do Sys.wait(100);
             }
-            if(inp=87)//w=flash
+            if(inp=70)//f=flash
             {
                 do Tools.update(2);
+                do Shade.draw();
                 do Sys.wait(100);
             }
             if(inp=82)//r=restart
             {
                 return 0;
+            }
+            if(inp=80)//p=pass
+            {
+                return 1;
             }
             if(inp=85)//u=undo
             {
@@ -135,7 +144,7 @@ class Game
                     do Game.move_step(1);
                     do Game.draw();
                 }
-                do Sys.wait(100);
+                do Sys.wait(30);
             }
         }
         return 1;
@@ -156,7 +165,9 @@ class Game
     function void print_step()
     {
         do Output.moveCursor(11,28*2+5);
-        do Output.printString("   ");
+        do Output.printString(String_const._space());
+        do Output.printString(String_const._space());
+        do Output.printString(String_const._space());
         do Output.moveCursor(11,28*2+5);
         do Output.printInt(steps);
         return;
