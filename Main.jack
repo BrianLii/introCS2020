@@ -6,6 +6,7 @@ class Main
 	{
 		var boolean win_flag;
 		var int inp;
+		var int i;
 		do String_const.init();
 		do Output.moveCursor(5,0);
 		do Output.printString("   _____  ____  _  ______  ____          _   _ ");
@@ -57,9 +58,38 @@ class Main
 			if(win_flag){let progress=progress+1;}
 		}
 		do Screen.clearScreen();
-		do Output.moveCursor(10,20);
-		do Output.printString(String_const._you_win());
-		do Sys.halt();
+		do Output.moveCursor(5,0);
+							
+		do Output.printString("      Developer:  @BrianLii  @LouisTsai-Csie  @54Cable");
+		do Output.println();
+		do Output.println();
+		do Output.printString("       Producer:  @BrianLii");
+		do Output.println();
+		do Output.println();
+		do Output.printString("         System:  @BrianLii  @LouisTsai-Csie");
+		do Output.println();
+		do Output.println();
+		do Output.printString(" Art Supervisor:  @54Cable   @LouisTsai-Csie");
+		do Output.println();
+		do Output.println();
+		do Output.printString("@BrianLii: NTUCSIE B09 students' first programming lang: jack");
+		do Output.println();
+		do Output.println();
+		do Output.printString("@54Cable: A 'HIGH level' language -- jack");
+		do Output.println();
+		do Output.println();
+		do Output.printString("@LouisTsai-Csie: ");
+		let i=0;
+		while(true)
+		{
+			if(i>55){let i=0;}
+			do Output.moveCursor(3,i);
+			do Output.printString(String_const._you_win());
+			do Output.moveCursor(20,i);
+			do Output.printString(String_const._you_win());
+			do Sys.wait(100);
+			let i=i+1;
+		}
 		return;
 	}
 }
